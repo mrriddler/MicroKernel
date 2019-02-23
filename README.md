@@ -17,8 +17,9 @@
 
 **MicroKernel**是一个客户端微内核架构。从另一个角度来看，**MicroKernel**提供了最佳实践，也就是说，**MicroKernel**也是实现了其架构思想的框架。
 
+<center>
 ![microkernel_icon_white](https://github.com/mrriddler/MicroKernel/raw/master/resources/microkernel_icon_white.png)
-
+</center>
 
 
 ## 文档
@@ -79,12 +80,12 @@ CMPC与EventBus的不同就在于是否中心化。在影响到多方的场景�
 
 ![microkernel](https://github.com/mrriddler/MicroKernel/raw/master/resources/microkernel.jpeg)
 
-- **MicroKernel：**整个App的驱动，提供**MicroApplication**管理、通信机制、依赖注入、路由等。
-- **MicroKernelService：**贯穿App的基础能力服务，提供基础能力的领域抽象，不包括具体的技术选型，不必拘泥于依赖注入形式。
-- **MicroApplicationService：**贯穿App的业务服务，从复用角度聚合，包括其整体业务方案，比如，分享、登录、支付等。
-- **MicroApplicationCoordinator：**解开**MicroApplication**之间耦合的协调器。通过模仿RPC形式的CMPC(Cross Module Procedure Call)和EventBus(MessageQueue)来跨模块访问。
-- **MicroApplication：**独立的业务，从功能角度聚合，在架构中称作应用。App的运行形式化为应用的不断切换。其形式包括Native、H5、Hybrid、小程序等。
-- **MainApplication：**整个App的架构注册、配置，以及外部渠道的对接。
+- **MicroKernel**：整个App的驱动，提供**MicroApplication**管理、通信机制、依赖注入、路由等。
+- **MicroKernelService**：贯穿App的基础能力服务，提供基础能力的领域抽象，不包括具体的技术选型，不必拘泥于依赖注入形式。
+- **MicroApplicationService**：贯穿App的业务服务，从复用角度聚合，包括其整体业务方案，比如，分享、登录、支付等。
+- **MicroApplicationCoordinator**：解开**MicroApplication**之间耦合的协调器。通过模仿RPC形式的CMPC(Cross Module Procedure Call)和EventBus(MessageQueue)来跨模块访问。
+- **MicroApplication**：独立的业务，从功能角度聚合，在架构中称作应用。App的运行形式化为应用的不断切换。其形式包括Native、H5、Hybrid、小程序等。
+- **MainApplication**：整个App的架构注册、配置，以及外部渠道的对接。
 
 层层嵌套与外层依赖内层是稳定架构的关键因素。
 
