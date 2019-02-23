@@ -1,0 +1,11 @@
+framework module MicroKernel {
+  umbrella header "MicroKernel.h"
+
+  export *
+  module * { export * }
+}
+
+module MicroKernel.Swift {
+    header "MicroKernel-Swift.h"
+    requires objc
+}
