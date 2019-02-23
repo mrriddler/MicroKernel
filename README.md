@@ -17,9 +17,8 @@
 
 **MicroKernel**是一个客户端微内核架构。从另一个角度来看，**MicroKernel**提供了最佳实践，也就是说，**MicroKernel**也是实现了其架构思想的框架。
 
-<center>
-![microkernel_icon_white](https://github.com/mrriddler/MicroKernel/raw/master/resources/microkernel_icon_white.png)
-</center>
+<div align=center><img width="200" height="200" src="https://github.com/mrriddler/MicroKernel/raw/master/resources/microkernel_icon_white.png"/></div>
+
 
 
 ## 文档
