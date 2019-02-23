@@ -1,0 +1,2 @@
+# MicroKernel
+MicroKernel是一个客户端微内核架构。从另一个角度来看，MicroKernel提供了最佳实践，也就是说，MicroKernel也是实现了其架构思想的框架。
