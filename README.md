@@ -17,7 +17,7 @@
 
 **MicroKernel**是一个客户端微内核架构。从另一个角度来看，**MicroKernel**提供了最佳实践，也就是说，**MicroKernel**也是实现了其架构思想的框架。
 
-![microkernel_icon_white](https://github.com/mrriddler/MicroKernel/resources/microkernel_icon_white.png)
+![microkernel_icon_white](https://github.com/mrriddler/MicroKernel/raw/master/resources/microkernel_icon_white.png)
 
 
 
@@ -28,9 +28,9 @@
 - 边界与层次
 - 原则
 - 没有银弹
-- [框架](https://github.com/mrriddler/MicroKernel/resource/Framework.md)
+- [框架](https://github.com/mrriddler/MicroKernel/blob/master/resources/Framework.md)
 - [教学](https://github.com/mrriddler/MicroKernelDemo)
-- [接入](https://github.com/mrriddler/MicroKernelDemo/resources/Access.md)
+- [接入](https://github.com/mrriddler/MicroKernelDemo/blob/master/resources/Access.md)
 
 
 
@@ -77,7 +77,7 @@ CMPC与EventBus的不同就在于是否中心化。在影响到多方的场景�
 
 ## 边界与层次
 
-![microkernel](https://github.com/mrriddler/MicroKernel/resources/microkernel.jpeg)
+![microkernel](https://github.com/mrriddler/MicroKernel/raw/master/resources/microkernel.jpeg)
 
 - **MicroKernel：**整个App的驱动，提供**MicroApplication**管理、通信机制、依赖注入、路由等。
 - **MicroKernelService：**贯穿App的基础能力服务，提供基础能力的领域抽象，不包括具体的技术选型，不必拘泥于依赖注入形式。
