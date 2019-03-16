@@ -186,13 +186,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class NSCoder;
 
 SWIFT_CLASS("_TtC11MicroKernel31MicroKernelNavigationController")
-@interface MicroKernelNavigationController : UINavigationController
+@interface MicroKernelNavigationController : UINavigationController <UINavigationControllerDelegate>
 - (void)pushViewController:(UIViewController * _Nonnull)viewController animated:(BOOL)animated;
 - (UIViewController * _Nullable)popViewControllerAnimated:(BOOL)animated SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<UIViewController *> * _Nullable)popToViewController:(UIViewController * _Nonnull)viewController animated:(BOOL)animated SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<UIViewController *> * _Nullable)popToRootViewControllerAnimated:(BOOL)animated SWIFT_WARN_UNUSED_RESULT;
 - (void)setViewControllers:(NSArray<UIViewController *> * _Nonnull)viewControllers animated:(BOOL)animated;
 - (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^ _Nullable)(void))completion;
+- (void)navigationController:(UINavigationController * _Nonnull)navigationController didShowViewController:(UIViewController * _Nonnull)viewController animated:(BOOL)animated;
 - (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=5.0);
 - (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;

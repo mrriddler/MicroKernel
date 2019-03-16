@@ -7,7 +7,9 @@
 
 import UIKit
 
-open class MicroKernelNavigationController: UINavigationController {
+open class MicroKernelNavigationController: UINavigationController, UINavigationControllerDelegate {
+    
+    private var popIfNeededVC: UIViewController?
     
     override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         super.pushViewController(viewController, animated: animated)
@@ -19,12 +21,12 @@ open class MicroKernelNavigationController: UINavigationController {
             return nil
         }
         
-        NavigationDriverAspect.shared.pop(res)
+        self.popIfNeededVC = res
         
         return res
     }
     
-    open override func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
+    override open func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
         guard let res = super.popToViewController(viewController, animated: animated) else {
             return nil
         }
@@ -51,7 +53,7 @@ open class MicroKernelNavigationController: UINavigationController {
         NavigationDriverAspect.shared.setViewControllers(popedVC)
     }
     
-    open override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+    override open func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         NavigationDriverAspect.shared.dismiss(self.collectPresentingViewController(viewController: self))
 
         super.dismiss(animated: flag, completion: {
@@ -59,5 +61,15 @@ open class MicroKernelNavigationController: UINavigationController {
                 completion()
             }
         })
+    }
+    
+    open func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        
+        if let popIfNeededVC = self.popIfNeededVC {
+            if !self.viewControllers.contains(popIfNeededVC) {
+                NavigationDriverAspect.shared.pop(popIfNeededVC)
+            }
+            self.popIfNeededVC = nil
+        }
     }
 }
